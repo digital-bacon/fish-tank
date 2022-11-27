@@ -5,7 +5,7 @@ class BiteFish extends Fish {
     this.imageUri = '/images/biteFish.gif'; // Set the image
     this.maxSwimSpeed = 100;
     this.makeNewVelocity();
-    this.isTasty = true;
+    this.isTasty = false;
   }
 
   updateOneTick() {
@@ -27,8 +27,8 @@ class BiteFish extends Fish {
       // Found a tasty fish! Check if we are close enough to eat it!
       const biteFishPositionX = this.position.x;
       const biteFishPositionY = this.position.y;
-      const distanceFromTastyFishX = (biteFishPositionX - denizen.position.x);
-      const distanceFromTastyFishY = (biteFishPositionY - denizen.position.y);
+      const distanceFromTastyFishX = Math.abs(biteFishPositionX - denizen.position.x);
+      const distanceFromTastyFishY = Math.abs(biteFishPositionY - denizen.position.y);
       console.log(`distanceFromTastyFishX: ${distanceFromTastyFishX}`);
       console.log(`distanceFromTastyFishY: ${distanceFromTastyFishY}`);
     }
