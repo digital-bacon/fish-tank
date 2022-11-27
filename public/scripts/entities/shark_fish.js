@@ -1,13 +1,13 @@
-class BiteFish extends Fish {
+class SharkFish extends Fish {
 
   constructor(options) {
     super(options); // Call super to run the code inside `Fish`'s constructor
-    this.imageUri = '/images/biteFish.gif'; // Set the image
+    this.imageUri = '/images/happy-shark.png'; // Set the image
     this.maxSwimSpeed = 100;
     this.makeNewVelocity();
     this.isTasty = false;
-    this.width = 100;
-    this.height = 91;
+    this.height = 256;
+    this.width = 256;
   }
 
   updateOneTick() {
@@ -27,10 +27,10 @@ class BiteFish extends Fish {
       }
       // console.log(`found a tasty fish!`)
       // Found a tasty fish! Check if we are close enough to eat it!
-      const biteFishPositionX = this.position.x;
-      const biteFishPositionY = this.position.y;
-      const distanceFromTastyFishX = Math.abs(biteFishPositionX - denizen.position.x);
-      const distanceFromTastyFishY = Math.abs(biteFishPositionY - denizen.position.y);
+      const sharkPositionX = this.position.x;
+      const sharkPositionY = this.position.y;
+      const distanceFromTastyFishX = Math.abs(sharkPositionX - denizen.position.x);
+      const distanceFromTastyFishY = Math.abs(sharkPositionY - denizen.position.y);
       const killZone = 1;
       if (distanceFromTastyFishX <= killZone || distanceFromTastyFishY <= denizen.killZone) {
         denizen.kill();
