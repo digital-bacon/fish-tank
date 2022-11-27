@@ -15,7 +15,7 @@ class BiteFish extends Fish {
     if (this.timeUntilSpeedChange < 0) {
       this.makeNewVelocity();
     }
-    // console.log(this.tank.denizens)
+    console.log(this.tank.denizens)
     // Check all fish in the tank
     const tankDenizens = Object.values(this.tank.denizens);
     for (const denizen of tankDenizens) {
@@ -29,8 +29,9 @@ class BiteFish extends Fish {
       const biteFishPositionY = this.position.y;
       const distanceFromTastyFishX = Math.abs(biteFishPositionX - denizen.position.x);
       const distanceFromTastyFishY = Math.abs(biteFishPositionY - denizen.position.y);
-      console.log(`distanceFromTastyFishX: ${distanceFromTastyFishX}`);
-      console.log(`distanceFromTastyFishY: ${distanceFromTastyFishY}`);
+      denizen.kill();
+      // console.log(`distanceFromTastyFishX: ${distanceFromTastyFishX}`);
+      // console.log(`distanceFromTastyFishY: ${distanceFromTastyFishY}`);
     }
   }
 
