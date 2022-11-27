@@ -23,7 +23,7 @@ class BiteFish extends Fish {
       if (denizen.isTasty === false) {
         continue;
       }
-      console.log(`denizen: ${denizen}!`)
+      console.log(`found a tasty fish!`)
     }
   }
 
