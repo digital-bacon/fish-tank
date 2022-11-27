@@ -6,8 +6,9 @@ class SharkFish extends Fish {
     this.maxSwimSpeed = 100;
     this.makeNewVelocity();
     this.isTasty = false;
-    this.height = 256;
-    this.width = 256;
+    this.height = 50;
+    this.width = 50;
+    this.isShark = true;
   }
 
   updateOneTick() {
@@ -22,7 +23,7 @@ class SharkFish extends Fish {
     const tankDenizens = Object.values(this.tank.denizens);
     for (const denizen of tankDenizens) {
       // Ignore fish that aren't tasty/edible
-      if (denizen.isTasty === false) {
+      if (denizen.isFish === false || denizen.isShark === true) {
         continue;
       }
       // console.log(`found a tasty fish!`)
@@ -34,6 +35,8 @@ class SharkFish extends Fish {
       const killZone = 1;
       if (distanceFromTastyFishX <= killZone || distanceFromTastyFishY <= denizen.killZone) {
         denizen.kill();
+        this.width = this.width + 10;
+        this.height = this.height + 10;
       }
     }
   }

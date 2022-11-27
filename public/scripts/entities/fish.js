@@ -6,6 +6,7 @@ class Fish extends Denizen {
     this.maxSwimSpeed = 100;
     this.makeNewVelocity();
     this.isTasty = true;
+    this.isFish = true;
   }
 
   generateSwimVelocity(max, min) {
