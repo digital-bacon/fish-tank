@@ -24,6 +24,13 @@ class BiteFish extends Fish {
         continue;
       }
       console.log(`found a tasty fish!`)
+      // Found a tasty fish! Check if we are close enough to eat it!
+      const biteFishPositionX = this.position.x;
+      const biteFishPositionY = this.position.y;
+      const distanceFromTastyFishX = (biteFishPositionX - denizen.position.x);
+      const distanceFromTastyFishY = (biteFishPositionY - denizen.position.y);
+      console.log(`distanceFromTastyFishX: ${distanceFromTastyFishX}`);
+      console.log(`distanceFromTastyFishY: ${distanceFromTastyFishY}`);
     }
   }
 
