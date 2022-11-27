@@ -31,8 +31,7 @@ class BiteFish extends Fish {
       const biteFishPositionY = this.position.y;
       const distanceFromTastyFishX = Math.abs(biteFishPositionX - denizen.position.x);
       const distanceFromTastyFishY = Math.abs(biteFishPositionY - denizen.position.y);
-      const killZone = 1;
-      if (distanceFromTastyFishX <= killZone || distanceFromTastyFishY <= denizen.killZone) {
+      if (distanceFromTastyFishX <= this.width / 2 || distanceFromTastyFishY <= this.height / 2) {
         denizen.kill();
         this.width = this.width + 10;
         this.height = this.height + 10;
