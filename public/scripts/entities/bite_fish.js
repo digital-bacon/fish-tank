@@ -22,7 +22,7 @@ class BiteFish extends Fish {
     const tankDenizens = Object.values(this.tank.denizens);
     for (const denizen of tankDenizens) {
       // Ignore fish that aren't tasty/edible
-      if (denizen.isFish === false ||denizen.isTasty === false) {
+      if (denizen.isFish === false || denizen.isTasty === false || denizen.isShark === true) {
         continue;
       }
       // console.log(`found a tasty fish!`)
@@ -33,8 +33,6 @@ class BiteFish extends Fish {
       const distanceFromTastyFishY = Math.abs(biteFishPositionY - denizen.position.y);
       if (distanceFromTastyFishX <= this.width / 2 || distanceFromTastyFishY <= this.height / 2) {
         denizen.kill();
-        this.width = this.width + 10;
-        this.height = this.height + 10;
       }
     }
   }
